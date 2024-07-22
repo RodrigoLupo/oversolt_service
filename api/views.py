@@ -58,7 +58,6 @@ class RefreshTokenView(APIView):
             refresh_token = request.data["refresh"]
             token = RefreshToken(refresh_token)
             new_access_token = token.access_token
-
             return Response({
                 'access': str(new_access_token),
             }, status=status.HTTP_200_OK)
